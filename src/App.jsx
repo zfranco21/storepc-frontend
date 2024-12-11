@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './components/Header';
 import Nav from './components/Nav';
 import Anuncio from './components/Anuncio';
+import Blackweek from './components/Blackweek';
 function App() {
   return (
     <div>
@@ -9,10 +10,12 @@ function App() {
       <main>
         <Nav />
         <Anuncio />
-        {/* Aquí va el contenido principal de tu app */}
+        {<Blackweek />}
       </main>
     </div>
   );
 }
 
 export default App;
+
+
