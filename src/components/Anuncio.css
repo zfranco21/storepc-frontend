@@ -1,3 +1,12 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
 /* Contenedor de la imagen */
 .AnuncioImg {
     width: 100%; /* Toma todo el ancho de la pantalla */

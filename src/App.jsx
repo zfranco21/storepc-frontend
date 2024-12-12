@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Nav from './components/Nav';
 import Anuncio from './components/Anuncio';
 import Blackweek from './components/Blackweek';
+import Sponsor from './components/sponsor';
 function App() {
   return (
     <div>
@@ -10,7 +11,10 @@ function App() {
       <main>
         <Nav />
         <Anuncio />
-        {<Blackweek />}
+        <Blackweek />
+
+        {/*Agregar Seccion Products*/}
+        <Sponsor />
       </main>
     </div>
   );

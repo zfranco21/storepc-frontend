@@ -43,7 +43,7 @@ const ProductCard = ({ name, price, image }) => {
       <p>${price}</p>
       <button>Add to Cart</button>
     </div>*/}
-
+ {name} {price} {image}
     </section>
     </div>
   );
