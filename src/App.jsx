@@ -4,6 +4,8 @@ import Nav from './components/Nav';
 import Anuncio from './components/Anuncio';
 import Blackweek from './components/Blackweek';
 import Sponsor from './components/sponsor';
+import Carrito from './components/carrito';
+import Footer from './components/Footer';
 function App() {
   return (
     <div>
@@ -16,6 +18,10 @@ function App() {
         {/*Agregar Seccion Products*/}
         <Sponsor />
       </main>
+      <footer>
+        <Footer />
+        <Carrito />
+      </footer>
     </div>
   );
 }
