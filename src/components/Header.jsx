@@ -1,10 +1,14 @@
-import './Header.css';
-import { useState } from 'react';
-import logo from '../assets/logo.svg';
+import "./Header.css";
+import { useState, useEffect, useContext } from "react";
+import { UserAuthContext } from "../context/UserAuthContext";
+import logo from "../assets/logo.svg";
+import LoginModal from "./LoginModal";
 
 function Header() {
   // Estado para el valor del buscador
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false); // Controla la visibilidad del modal
+  const { user, logout } = useContext(UserAuthContext);
 
   // Función para manejar el cambio en el buscador
   const handleSearchChange = (e) => {
@@ -14,8 +18,8 @@ function Header() {
   // Función para manejar el envío del formulario
   const handleSearchSubmit = (e) => {
     e.preventDefault(); // Evita el comportamiento predeterminado del formulario
-    if (searchTerm.trim() === '') {
-      alert('Por favor ingresa un término de búsqueda.');
+    if (searchTerm.trim() === "") {
+      alert("Por favor ingresa un término de búsqueda.");
     } else {
       alert(`Buscando: ${searchTerm}`);
       // Aquí puedes integrar la lógica para realizar la búsqueda, como una llamada a una API
@@ -43,10 +47,21 @@ function Header() {
         </form>
       </div>
 
-      {/* Botón */}
-      <div className="header-button">
-        <button onClick={() => alert('Botón de Ingreso clickeado')}>Ingresar</button>
-      </div>
+      {/* Botón para abrir el modal de login si no hay usuario logeado*/}
+      {!user && (
+        <div className="header-button">
+          <button onClick={() => setIsModalOpen(true)}>Ingresar</button>
+        </div>
+      )}
+      {/*CONDICIONAL PARA PROBAR SI FUNCIONA EL LOGEO Y DESLOGUEO*/}
+      {user && (
+        <div className="header-button">
+          <button onClick={logout}>DESLOGEARSE</button>
+        </div>
+      )}
+
+      {/* Renderiza el modal */}
+      {isModalOpen && <LoginModal closeModal={() => setIsModalOpen(false)} />}
     </header>
   );
 }
