@@ -1,43 +1,11 @@
-import { useState } from "react";
-import { useAuth } from "../context/UserAuthContext";
-import "./LoginModal.css"; // Archivo CSS externo
+import "./LoginModal.css";
+import { useLogin } from "../hooks/useLogin";
 
 export default function LoginModal({ closeModal }) {
-  const { setUser } = useAuth();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
+  const { email, setEmail, password, setPassword, error, handleLogin } =
+    useLogin(closeModal);
 
-  const handleLogin = async () => {
-    console.log("email:", email);
-    console.log("password:", password);
-    try {
-      const response = await fetch("http://localhost:3000/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || "Credenciales incorrectas");
-      }
-
-      console.log(data); // Revisa la respuesta que llega del backend
-
-      if (data.user) {
-        setUser(data.user);
-        closeModal(); // Cierra el modal al iniciar sesión con éxito
-      } else {
-        throw new Error("Error de autenticación");
-      }
-    } catch (error) {
-      setError(error.message);
-    }
-  };
+  // movida toda la logica a un custom hook useLogin.
 
   return (
     <div className="modal-overlay">
