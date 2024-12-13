@@ -3,11 +3,12 @@ import { useState, useEffect, useContext } from "react";
 import { UserAuthContext } from "../context/UserAuthContext";
 import logo from "../assets/logo.svg";
 import LoginModal from "./LoginModal";
+import RegisterModal from "./RegisterModal";
 
 function Header() {
   // Estado para el valor del buscador
   const [searchTerm, setSearchTerm] = useState("");
-  const [isModalOpen, setIsModalOpen] = useState(false); // Controla la visibilidad del modal
+  const [modalType, setModalType] = useState(null); // simplifica el control del renderizado de modales
   const { user, logout } = useContext(UserAuthContext);
 
   // Función para manejar el cambio en el buscador
@@ -50,7 +51,7 @@ function Header() {
       {/* Botón para abrir el modal de login si no hay usuario logeado*/}
       {!user && (
         <div className="header-button">
-          <button onClick={() => setIsModalOpen(true)}>Ingresar</button>
+          <button onClick={() => setModalType("login")}>Ingresar</button>
         </div>
       )}
       {/*CONDICIONAL PARA PROBAR SI FUNCIONA EL LOGEO Y DESLOGUEO*/}
@@ -60,8 +61,20 @@ function Header() {
         </div>
       )}
 
-      {/* Renderiza el modal */}
-      {isModalOpen && <LoginModal closeModal={() => setIsModalOpen(false)} />}
+      {/* Renderiza el modal del login */}
+      {modalType === "login" && (
+        <LoginModal
+          closeLoginModal={() => setModalType(null)}
+          setModalType={setModalType}
+        />
+      )}
+      {/* Renderiza el modal del registro */}
+      {modalType === "register" && (
+        <RegisterModal
+          closeRegisterModal={() => setModalType(null)}
+          setModalType={setModalType}
+        />
+      )}
     </header>
   );
 }
