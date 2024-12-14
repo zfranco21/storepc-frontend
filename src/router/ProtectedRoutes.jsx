@@ -1,4 +1,3 @@
-// ProtectedRoutes.jsx
 import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import { useAuth } from "../context/UserAuthContext";
@@ -15,9 +14,8 @@ export default function ProtectedRoutes({ adminOnly = false }) {
   }
 
   if (adminOnly && !currentUser.isAdmin) {
-    return <Navigate to="/" />; // redireccion por si el usuario logeado es administrador
-  }
+    return <Navigate to="/" />; // redireccion por si el usuario logeado no es administrador
   }
 
-  return <Outlet />;
+  return <Outlet />; // Componente hijo que se renderiza cuando la ruta está protegida
 }

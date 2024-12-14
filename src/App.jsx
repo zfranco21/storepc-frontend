@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom'; // Importación correcta de Routes y Route
 import Header from './components/Header';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
@@ -13,7 +13,7 @@ import Products from './components/products';
 
 function App() {
   return (
-    <Router>
+    <>
       <Header />
       <main>
         <Nav />
@@ -34,7 +34,7 @@ function App() {
         <Footer />
         <Carrito />
       </footer>
-    </Router>
+    </>
   );
 }
 
