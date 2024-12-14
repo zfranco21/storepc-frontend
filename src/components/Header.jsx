@@ -1,7 +1,9 @@
 import "./Header.css";
 import { useState, useContext } from "react";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
+
 import { UserAuthContext } from "../context/UserAuthContext";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.svg";
 import LoginModal from "./LoginModal";
 import RegisterModal from "./RegisterModal"
@@ -11,6 +13,7 @@ function Header() {
   const [searchTerm, setSearchTerm] = useState("");
   const [modalType, setModalType] = useState(null); // simplifica el control del renderizado de modales
   const { user, logout } = useContext(UserAuthContext);
+  const navigate = useNavigate();
 
   // Función para manejar el cambio en el buscador
   const handleSearchChange = (e) => {
@@ -32,8 +35,14 @@ function Header() {
     <header className="header">
       {/* Logo */}
       <div className="logo">
-        <Link to="/"><img src={logo} alt="Logo de la página" /></Link>
-        <Link className="title" to="/"><h1>STORE PC</h1></Link>
+
+        <Link to="/">
+          <img src={logo} alt="Logo de la página" />
+        </Link>
+        <Link className="title" to="/">
+          <h1>STORE PC</h1>
+        </Link>
+
       </div>
 
       {/* Buscador */}
@@ -57,9 +66,30 @@ function Header() {
       )}
       {/*CONDICIONAL PARA PROBAR SI FUNCIONA EL LOGEO Y DESLOGUEO*/}
       {user && (
-        <div className="header-button">
-          <button onClick={logout}>DESLOGEARSE</button>
-        </div>
+        <>
+          {!user.isAdmin ? (
+            <div className="header-button">
+              <button
+                onClick={() => alert("Accediendo a perfil usuario normal")}
+              >
+                Perfil
+              </button>
+            </div>
+          ) : (
+            <div className="header-button">
+              <button
+                onClick={() => {
+                  navigate("/AdminDashboard");
+                }}
+              >
+                Panel de control
+              </button>
+            </div>
+          )}
+          <div className="logout-button">
+            <button onClick={logout}>Logout</button>
+          </div>
+        </>
       )}
 
       {/* Renderiza el modal del login */}

@@ -1,65 +1,71 @@
 /* Estilo general del header */
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #1e1e1e;
-    color: white;
-    height: 60px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Estilo del logo */
-  .logo img {
-    height: 40px;
-    width: auto;
-  }
-  
-  .title {
-    font-size: 10px;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #1e1e1e;
+  color: white;
+  height: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-    &&:hover {
-      color: #ff5722;
-    }
+/* Estilo del logo */
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+.title {
+  font-size: 10px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+
+  &&:hover {
+    color: #ff5722;
   }
 
-  /* Estilo del buscador */
-  .search-bar input {
-    width: 200px;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
-    outline: none;
-  }
-  
-  /* Cambiar el estilo del input al enfocarse */
-  .search-bar input:focus {
-    border: 1px solid #ff5722;
-  }
-  
-  /* Estilo del botón */
-  .header-button button {
-    padding: 5px 15px;
-    font-size: 14px;
-    background-color: #ff5722;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .header-button button:hover {
-    background-color: #e64a19;
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-    font-size: 10px;
-  }
+}
+
+/* Estilo del buscador */
+.search-bar input {
+  width: 200px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Cambiar el estilo del input al enfocarse */
+.search-bar input:focus {
+  border: 1px solid #ff5722;
+}
+
+/* Estilo del botón */
+.header-button button {
+  padding: 5px 15px;
+  font-size: 14px;
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.header-button button:hover {
+  background-color: #e64a19;
+}
+
+.logout-button button {
+  padding: 5px 15px;
+  font-size: 14px;
+  background-color: #e70000;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
