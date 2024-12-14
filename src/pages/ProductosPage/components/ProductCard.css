@@ -1,0 +1,84 @@
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    gap: 10rem;
+    align-items: center;
+  }
+  
+  /* Estilos para la imagen y efecto hover */
+  .pcPromo {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Efecto hover en la imagen */
+  .pcPromo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Estilo para las cards */
+  .product-card {
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 260px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Efecto hover en la card */
+  .product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .product-card h3 {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .product-card h2 {
+    font-size: 14px;
+    color: #E64A19;
+  }
+  
+  .product-card p {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+  }
+  
+  .product-card button {
+    background: #E64A19;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .product-card button:hover {
+    background: #003dbf;
+  }
+  
