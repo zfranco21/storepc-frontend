@@ -1,18 +1,18 @@
-import React from "react"; 
+import React from "react";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { UserAuthProvider } from "./context/UserAuthContext";
 import { BrowserRouter } from "react-router-dom";
 
 import "./index.css";
-import App from "./App"; // Importas App.jsx que es el componente raíz
+import AppRouter from "./Router/AppRouter"; // Asegúrate de que la ruta esté correcta
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter> 
-    <UserAuthProvider>
-      <App />
-    </UserAuthProvider>
+    <BrowserRouter>
+      <UserAuthProvider>
+        <AppRouter /> {/* Cambié App por AppRouter */}
+      </UserAuthProvider>
     </BrowserRouter>
   </StrictMode>
 );

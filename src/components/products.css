@@ -16,33 +16,8 @@ body {
     align-items: center;
   }
   
-  .blackWeek {
-    display: flex;
-    margin: 30px 0 30px 30px;
-  }
-  
-  .blackWeek p {
-    font-size: 10px;
-    color: #0078F8;
-    margin: 0 0 0 4px;
-  }
-  
-  .blackWeek p a {
-    text-decoration: none;
-    color: #E64A19;
-  }
-  
-  .blackWeek button {
-    font-size: 16px;
-    padding: 6px 10px;
-    border: 2px solid #E64A19;
-    background-color: #E64A19;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  /* Estilos de las imágenes */
-  .pcPromo {
+
+.pcPromo {
     width: 80%;
     height: auto;
     border-radius: 8px;

@@ -25,6 +25,7 @@
   &&:hover {
     color: #ff5722;
   }
+
 }
 
 /* Estilo del buscador */
@@ -67,10 +68,4 @@
   border-radius: 14px;
   cursor: pointer;
   transition: background-color 0.3s;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  font-size: 10px;
 }
