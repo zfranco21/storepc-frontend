@@ -16,6 +16,17 @@
     width: auto;
   }
   
+  .title {
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+
+    &&:hover {
+      color: #ff5722;
+    }
+  }
+
   /* Estilo del buscador */
   .search-bar input {
     width: 200px;
