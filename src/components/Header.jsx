@@ -1,12 +1,11 @@
 import "./Header.css";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-
 import { UserAuthContext } from "../context/UserAuthContext";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.svg";
 import LoginModal from "./LoginModal";
-import RegisterModal from "./RegisterModal"
+import RegisterModal from "./RegisterModal";
 
 function Header() {
   // Estado para el valor del buscador
@@ -35,14 +34,12 @@ function Header() {
     <header className="header">
       {/* Logo */}
       <div className="logo">
-
         <Link to="/">
           <img src={logo} alt="Logo de la página" />
         </Link>
         <Link className="title" to="/">
           <h1>STORE PC</h1>
         </Link>
-
       </div>
 
       {/* Buscador */}

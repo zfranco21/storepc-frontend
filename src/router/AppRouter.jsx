@@ -1,6 +1,5 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-
 import App from "../App"; // Página de inicio
 import Soporte from "../pages/SoportePage/SoportePage";
 import Productos from "../pages/ProductosPage/ProductosPage";
