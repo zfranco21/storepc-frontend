@@ -11,7 +11,7 @@ body {
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
-    min-height: 100vh;
+    min-height: 20vh;
     margin: 0 auto;
     box-sizing: border-box;
     
