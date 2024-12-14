@@ -15,6 +15,7 @@
   height: 40px;
   width: auto;
 }
+<<<<<<< HEAD
 
 .title {
   font-size: 10px;
@@ -25,6 +26,19 @@
   &&:hover {
     color: #ff5722;
   }
+=======
+
+.title {
+  font-size: 10px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+
+  &&:hover {
+    color: #ff5722;
+  }
+
+>>>>>>> fad71d939b76a8de91918a40f2a6406488551465
 }
 
 /* Estilo del buscador */
@@ -68,9 +82,12 @@
   cursor: pointer;
   transition: background-color 0.3s;
 }
+<<<<<<< HEAD
 
 .logo {
   display: flex;
   align-items: center;
   font-size: 10px;
 }
+=======
+>>>>>>> fad71d939b76a8de91918a40f2a6406488551465

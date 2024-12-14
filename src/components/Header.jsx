@@ -1,6 +1,10 @@
 import "./Header.css";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
+=======
+
+>>>>>>> fad71d939b76a8de91918a40f2a6406488551465
 import { UserAuthContext } from "../context/UserAuthContext";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.svg";
@@ -34,12 +38,20 @@ function Header() {
     <header className="header">
       {/* Logo */}
       <div className="logo">
+<<<<<<< HEAD
+=======
+
+>>>>>>> fad71d939b76a8de91918a40f2a6406488551465
         <Link to="/">
           <img src={logo} alt="Logo de la página" />
         </Link>
         <Link className="title" to="/">
           <h1>STORE PC</h1>
         </Link>
+<<<<<<< HEAD
+=======
+
+>>>>>>> fad71d939b76a8de91918a40f2a6406488551465
       </div>
 
       {/* Buscador */}
