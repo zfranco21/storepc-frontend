@@ -1,16 +1,20 @@
 import "./LoginModal.css";
 import { useLogin } from "../hooks/useLogin";
 
-export default function LoginModal({ closeModal }) {
+export default function LoginModal({ closeLoginModal, setModalType }) {
   const { email, setEmail, password, setPassword, error, handleLogin } =
-    useLogin(closeModal);
+    useLogin(closeLoginModal);
 
   // movida toda la logica a un custom hook useLogin.
+
+  function handleRegisterModal() {
+    setModalType("register");
+  }
 
   return (
     <div className="modal-overlay">
       <div className="modal-container">
-        <button onClick={closeModal} className="modal-close-button">
+        <button onClick={closeLoginModal} className="modal-close-button">
           ✕
         </button>
         <h2 className="modal-title">Accede con tu cuenta</h2>
@@ -39,10 +43,10 @@ export default function LoginModal({ closeModal }) {
         </button>
         {error && <p className="error-message">{error}</p>}
         <p className="modal-footer">
-          ¿No tienes cuenta?{" "}
-          <a href="/registro" className="register-link">
+          ¿No tienes cuenta?
+          <button className="register-link" onClick={handleRegisterModal}>
             Crear una cuenta
-          </a>
+          </button>
         </p>
       </div>
     </div>
