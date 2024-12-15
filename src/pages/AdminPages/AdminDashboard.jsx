@@ -22,7 +22,9 @@ export default function AdminDashboard() {
           </button>
           <button
             className="dashboard-button"
-            onClick={() => (window.location.href = "/admin/products")}
+            onClick={() => {
+              navigate("/admin/products/");
+            }}
           >
             Gestionar Productos
           </button>
@@ -34,7 +36,9 @@ export default function AdminDashboard() {
           </button>
           <button
             className="dashboard-button"
-            onClick={() => (window.location.href = "/admin/categories")}
+            onClick={() => {
+              navigate("/admin/categories");
+            }}
           >
             Gestionar Categorías
           </button>

@@ -1,5 +1,4 @@
 import React from "react";
-import React from "react";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { UserAuthProvider } from "./context/UserAuthContext";
