@@ -7,12 +7,15 @@ import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App"; // Importas App.jsx que es el componente raíz
 import AppRouter from "./router/AppRouter";
+import { CartProvider } from "./context/CartContext";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <UserAuthProvider>
-        <AppRouter />
+        <CartProvider>
+          <AppRouter />
+        </CartProvider>
       </UserAuthProvider>
     </BrowserRouter>
   </StrictMode>
@@ -23,7 +26,9 @@ createRoot(document.getElementById("root")).render(
 <StrictMode> modo estricto de react
   <BrowserRouter> capa encargada del enrutamiento de la aplicacion
     <UserAuthProvider> capa encargada del manejo de datos de usuario logeado
-      <AppRouter /> capa de aplicacion que si o si tiene que llamar al approuter para las redirecciones
+      <CartProvider> capa encargada de manejar datos del carrito de compras atravez de la pagina. 
+        <AppRouter /> capa de aplicacion que si o si tiene que llamar al approuter para las redirecciones
+      </CartProvider>
     </UserAuthProvider>
   </BrowserRouter>
 </StrictMode> 

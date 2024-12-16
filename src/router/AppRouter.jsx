@@ -8,6 +8,8 @@ import AdminDashboard from "../pages/AdminPages/AdminDashboard";
 import UsersList from "../pages/AdminPages/users/UserList";
 import ProductList from "../pages/AdminPages/products/ProductList";
 import CategoriesList from "../pages/AdminPages/categories/CategoriesList";
+import OrderList from "../pages/AdminPages/orders/OrderList";
+import Checkout from "../pages/UserPages/Checkout";
 
 export default function AppRouter() {
   return (
@@ -21,6 +23,7 @@ export default function AppRouter() {
       <Route element={<ProtectedRoutes />}>
         <Route path="/soporte" element={<Soporte />} />
         <Route path="/productos" element={<Productos />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Route>
 
       {/* RUTAS ADMINISTRADOR */}
@@ -28,7 +31,7 @@ export default function AppRouter() {
         <Route path="/AdminDashboard" element={<AdminDashboard />} />
         <Route path="/admin/users" element={<UsersList />} />
         <Route path="/admin/products" element={<ProductList />} />
-        <Route path="/admin/orders" element={"<Orders />"} />
+        <Route path="/admin/orders" element={<OrderList />} />
         <Route path="/admin/categories" element={<CategoriesList />} />
       </Route>
     </Routes>

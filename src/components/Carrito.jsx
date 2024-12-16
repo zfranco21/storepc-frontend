@@ -1,11 +1,13 @@
+import { useNavigate } from 'react-router-dom';
 import './Carrito.css';
 import logoCarrito from '../assets/carrito.svg';
 
 const Carrito = () => {
+    const navigate = useNavigate();
     return (
         <div>
-            <button className='carrito'><img className='imgCarrito' src={logoCarrito} alt="" /></button>
-        </div>        
+            <button className='carrito' onClick={() => { navigate("/checkout") }}><img className='imgCarrito' src={logoCarrito} alt="" /></button>
+        </div>
     );
 };
 
