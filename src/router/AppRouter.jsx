@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import App from "../App"; // Página de inicio
+import HomePage from "../pages/HomePage/HomePage"; // Página de inicio
 import Soporte from "../pages/SoportePage/SoportePage";
 import Productos from "../pages/ProductosPage/ProductosPage";
 import ProtectedRoutes from "./ProtectedRoutes"; // Correcto con exportación por defecto
@@ -14,6 +15,7 @@ export default function AppRouter() {
     <Routes>
       {/* RUTAS PÚBLICAS */}
       <Route path="/" element={<App />} />
+      <Route path="/home" element={<HomePage />} />
       <Route path="/soporte" element={<Soporte />} />
       <Route path="/productos" element={<Productos />} />
 
