@@ -1,26 +1,14 @@
 import React from 'react';
 
-function Categorias() {
-  const categories = [
-    'Equipos y Notebooks',
-    'Monitores',
-    'Procesadores',
-    'Placas de Video',
-    'Memorias RAM',
-    'Discos Duros',
-    'Auriculares',
-    'Fuentes',
-    'Mouses',
-    'Teclados',
-    'Gabinetes',
-    'Fuentes',
-  ];
-
+function Categorias({ categories, onCategorySelect }) {
   return (
     <div className="categorias">
       <ul>
+        <li onClick={() => onCategorySelect(null)}>Todas</li>
         {categories.map((category, index) => (
-          <li key={index}>{category}</li>
+          <li key={index} onClick={() => onCategorySelect(category)}>
+            {category.name}
+          </li>
         ))}
       </ul>
     </div>

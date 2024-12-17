@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFetchProducts } from '../../hooks/useFetchProducts';
 import { useFetchCategories } from '../../hooks/useFetchCategories';
 import Categorias from './components/Categorias';
@@ -11,6 +11,7 @@ import './ProductosPage.css';
 function ProductosPage() {
   const { products, loading: productsLoading, error: productsError } = useFetchProducts();
   const { categories, loading: categoriesLoading, error: categoriesError } = useFetchCategories();
+  const [selectedCategory, setSelectedCategory] = useState(null); // Estado para la categoría seleccionada
 
   if (productsLoading || categoriesLoading) {
     return <p>Cargando...</p>;
@@ -27,9 +28,17 @@ function ProductosPage() {
       <div className="productos-page">
         <h1>Nuestros Productos</h1>
 
-        {/* Mostrar categorías y productos */}
-        <Categorias categories={categories} />
-        <ProductGrid products={products} />
+        {/* Categorías clickeables */}
+        <Categorias
+          categories={categories}
+          onCategorySelect={(category) => setSelectedCategory(category)}
+        />
+        
+        {/* Mostrar productos según la categoría */}
+        <ProductGrid
+          products={products}
+          selectedCategory={selectedCategory}
+        />
       </div>
       <Footer />
     </div>

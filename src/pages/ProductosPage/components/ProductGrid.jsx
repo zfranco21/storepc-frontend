@@ -1,15 +1,23 @@
 import React from 'react';
 import ProductCard from './ProductCard';
 
-function ProductGrid({ products }) {
-  // Verificar los productos recibidos (para depuración)
-  console.log("Productos recibidos en ProductGrid:", products);
+function ProductGrid({ products = [], selectedCategory }) {
+  // Filtrar productos según la categoría seleccionada
+  const filteredProducts = Array.isArray(products)
+    ? selectedCategory
+      ? products.filter((product) => product.category === selectedCategory.name)
+      : products
+    : [];
 
   return (
     <div className="product-grid">
-      {products.map((product, index) => (
-        <ProductCard key={index} product={product} />
-      ))}
+      {filteredProducts.length > 0 ? (
+        filteredProducts.map((product) => (
+          <ProductCard key={product.id || product.name} product={product} />
+        ))
+      ) : (
+        <p>No hay productos disponibles para esta categoría.</p>
+      )}
     </div>
   );
 }
