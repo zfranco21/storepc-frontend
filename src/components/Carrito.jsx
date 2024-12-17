@@ -2,12 +2,18 @@ import { useNavigate } from 'react-router-dom';
 import './Carrito.css';
 import logoCarrito from '../assets/carrito.svg';
 
-const Carrito = () => {
+const Carrito = ({ itemCount }) => {
     const navigate = useNavigate();
+
     return (
-        <div>
-            <button className='carrito' onClick={() => { navigate("/CartDetail") }}><img className='imgCarrito' src={logoCarrito} alt="" /></button>
-        </div>
+        <button
+            className='carrito'
+            onClick={() => { navigate("/CartDetail") }}
+            aria-label="Ir al carrito de compras"
+        >
+            <img className='imgCarrito' src={logoCarrito} alt="Icono del carrito" />
+            {itemCount > 0 && <span className="numberCarrito">{itemCount}</span>}
+        </button>
     );
 };
 

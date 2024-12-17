@@ -14,7 +14,6 @@ const initialState = {
     comment: "", // Comentarios adicionales
 };
 
-// Reducer para manejar las acciones del carrito
 const cartReducer = (state, action) => {
     switch (action.type) {
         case "SET_USER":
@@ -23,19 +22,19 @@ const cartReducer = (state, action) => {
         case "ADD_TO_CART": {
             const { product, quantity } = action.payload;
 
-            // Verificar si el producto ya está en el carrito
+            // Verificar si el producto ya está en el carrito por su ID
             const existingItem = state.items.find((item) => item.product.id === product.id);
 
             let updatedItems;
             if (existingItem) {
-                // Actualizar la cantidad del producto existente
+                // Si el producto ya existe, actualizar la cantidad
                 updatedItems = state.items.map((item) =>
                     item.product.id === product.id
-                        ? { ...item, quantity: item.quantity + quantity }
+                        ? { ...item, quantity: item.quantity + quantity } // Solo se actualiza la cantidad
                         : item
                 );
             } else {
-                // Agregar un nuevo producto al carrito
+                // Si no existe, agregar el producto al carrito
                 updatedItems = [...state.items, { product, quantity, price: product.price }];
             }
 
@@ -94,6 +93,7 @@ const cartReducer = (state, action) => {
             throw new Error(`Acción desconocida: ${action.type}`);
     }
 };
+
 
 // Proveedor del contexto del carrito
 export const CartProvider = ({ children }) => {
