@@ -1,22 +1,16 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Soporte from './pages/SoportePage/SoportePage';
-import Productos from './pages/ProductosPage/ProductosPage';
-import ArmadoPC from './pages/ArmadoPCPage/ArmadoPCPage';
-import HomePage from './pages/HomePage/HomePage'; // Página de inicio
+import AppRouter from './router/AppRouter';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Carrito from './components/carrito';
 
 function App() {
   return (
     <>
-      <main>
-        <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/productos" element={<Productos />} />
-        <Route path="/arma-tu-pc" element={<ArmadoPC />} />
-        <Route path="/soporte" element={<Soporte />} />
-        </Routes>
-
-      </main>
+      <Header />
+      <AppRouter />
+      <Carrito />
+      <Footer />
     </>
   );
 }

@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import Carrito from "../../components/carrito";
-import Header from "../../components/Header";
 import Nav from "../../components/Nav";
-import Footer from "../../components/Footer";
 import "./SoportePage.css";
 import user from "../../assets/user.svg";
 
@@ -34,7 +31,6 @@ function Soporte() {
 
   return (
     <div>
-      <Header />
       <Nav />
       <main>
         <div className="soporte-header">
@@ -89,10 +85,6 @@ function Soporte() {
 
         </div>
       </main>
-      <footer>
-        <Footer />
-        <Carrito />
-      </footer>
     </div>
   );
 }

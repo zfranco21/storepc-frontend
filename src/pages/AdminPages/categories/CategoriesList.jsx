@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import { useNavigate } from "react-router-dom";
 import "./CategoriesList.css";
-import Header from "../../../components/Header";
 
 function CategoryList() {
   const navigate = useNavigate();
@@ -115,7 +114,7 @@ function CategoryList() {
 
   return (
     <>
-      <Header />
+
       <div className="category-list__container">
         <button
           className="category-list__back-button"

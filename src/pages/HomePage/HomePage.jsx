@@ -1,13 +1,10 @@
 // src/pages/HomePage/HomePage.jsx
 import React from 'react';
-import Header from '../../components/Header';
-import Nav from '../../components/Nav'; 
-import Footer from '../../components/Footer'; 
-import Carrito from '../../components/carrito'; 
-import Anuncio from '../../components/Anuncio'; 
+import Nav from '../../components/Nav';
+import Anuncio from '../../components/Anuncio';
 import Blackweek from '../../components/Blackweek';
-import Sponsor from '../../components/sponsor'; 
-import ProductGrid from '../ProductosPage/components/ProductGrid'; 
+import Sponsor from '../../components/sponsor';
+import ProductGrid from '../ProductosPage/components/ProductGrid';
 import { useFetchProducts } from '../../hooks/useFetchProducts';
 
 const HomePage = () => {
@@ -23,7 +20,6 @@ const HomePage = () => {
 
   return (
     <>
-      <Header />
       <Nav />
       <main>
         <Anuncio />
@@ -33,8 +29,6 @@ const HomePage = () => {
       </main>
       <footer>
         <Sponsor />
-        <Footer />
-        <Carrito />
       </footer>
     </>
   );

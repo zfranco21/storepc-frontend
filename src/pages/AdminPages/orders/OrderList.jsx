@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import { useNavigate } from "react-router-dom";
 import "./OrderList.css";
-import Header from "../../../components/Header";
 
 function OrderList() {
     const navigate = useNavigate();
@@ -88,7 +87,7 @@ function OrderList() {
 
     return (
         <>
-            <Header />
+
             <div className="order-list__container">
                 <button
                     className="order-list__back-button"

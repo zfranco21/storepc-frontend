@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import { useNavigate } from "react-router-dom";
 import "./ProductList.css";
-import Header from "../../../components/Header";
 
 function ProductList() {
   const navigate = useNavigate();
@@ -192,7 +191,6 @@ function ProductList() {
 
   return (
     <>
-      <Header />
       <div className="product-list__container">
         <button
           className="product-list__back-button"

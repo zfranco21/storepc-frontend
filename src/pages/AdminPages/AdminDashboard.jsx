@@ -1,6 +1,6 @@
 import React from "react";
 import "./AdminDashboard.css"; // Archivo CSS para los estilos
-import Header from "../../components/Header"; // importe provisorio
+
 import { useNavigate } from "react-router-dom";
 
 export default function AdminDashboard() {
@@ -8,7 +8,7 @@ export default function AdminDashboard() {
 
   return (
     <>
-      <Header /> {/* import provisorio */}
+
       <div className="dashboard-container">
         <h1 className="dashboard-title">Panel de Administración</h1>
         <div className="dashboard-buttons">

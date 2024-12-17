@@ -3,7 +3,6 @@ import Select from "react-select";
 import { useFetchUsers } from "../../../hooks/useFetchUsers";
 import { useNavigate } from "react-router-dom"; // Importa useNavigate
 import "./UserList.css";
-import Header from "../../../components/Header";
 
 function UserList() {
   const navigate = useNavigate(); // Inicializa el hook useNavigate
@@ -84,7 +83,6 @@ function UserList() {
 
   return (
     <>
-      <Header /> {/* import provisorio */}
       <div className="user-list__container">
         {/* Botón para volver al AdminDashboard */}
         <button

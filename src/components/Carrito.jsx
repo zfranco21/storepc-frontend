@@ -6,7 +6,7 @@ const Carrito = () => {
     const navigate = useNavigate();
     return (
         <div>
-            <button className='carrito' onClick={() => { navigate("/checkout") }}><img className='imgCarrito' src={logoCarrito} alt="" /></button>
+            <button className='carrito' onClick={() => { navigate("/CartDetail") }}><img className='imgCarrito' src={logoCarrito} alt="" /></button>
         </div>
     );
 };

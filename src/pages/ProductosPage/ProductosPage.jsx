@@ -3,9 +3,6 @@ import { useFetchProducts } from '../../hooks/useFetchProducts';
 import { useFetchCategories } from '../../hooks/useFetchCategories';
 import Categorias from './components/Categorias';
 import ProductGrid from './components/ProductGrid';
-import Header from '../../components/Header';
-import Nav from '../../components/Nav';
-import Footer from '../../components/Footer';
 import './ProductosPage.css';
 
 function ProductosPage() {
@@ -22,8 +19,6 @@ function ProductosPage() {
 
   return (
     <div>
-      <Header />
-      <Nav />
       <div className="productos-page">
         <h1>Nuestros Productos</h1>
 
@@ -31,7 +26,6 @@ function ProductosPage() {
         <Categorias categories={categories} />
         <ProductGrid products={products} />
       </div>
-      <Footer />
     </div>
   );
 }
