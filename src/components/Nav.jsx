@@ -18,12 +18,12 @@ function Nav() {
                 ></button>
             </div>
             <nav id="menu" className={`desplegable ${menuAbierto ? 'abrir_menu' : ''}`}>
-            <ul>
-                <li><Link to="/">HOME</Link></li>
-                <li><Link to="/productos">PRODUCTOS</Link></li>
-                <li><Link to="/arma-tu-pc">ARMÁ TU PC</Link></li>
-                <li><Link to="/soporte">SOPORTE</Link></li>
-            </ul>
+                <ul>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/productos">PRODUCTOS</Link></li> 
+                    <li><Link to="/">ARMÁ TU PC</Link></li> 
+                    <li><Link to="/soporte">SOPORTE</Link></li> 
+                </ul>
             </nav>
         </div>
     );
