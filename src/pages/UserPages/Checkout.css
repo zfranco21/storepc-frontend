@@ -1,0 +1,47 @@
+.checkout-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.order-summary {
+  margin-top: 20px;
+}
+
+.checkout-button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.checkout-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.checkout-success {
+  text-align: center;
+  margin-top: 50px;
+}

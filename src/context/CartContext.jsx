@@ -22,19 +22,19 @@ const cartReducer = (state, action) => {
         case "ADD_TO_CART": {
             const { product, quantity } = action.payload;
 
-            // Verificar si el producto ya está en el carrito por su ID
-            const existingItem = state.items.find((item) => item.product.id === product.id);
-
+            // Usar _id como identificador único del producto
+            const existingItem = state.items.find((item) => item.product._id === product._id);
             let updatedItems;
+
             if (existingItem) {
                 // Si el producto ya existe, actualizar la cantidad
                 updatedItems = state.items.map((item) =>
-                    item.product.id === product.id
-                        ? { ...item, quantity: item.quantity + quantity } // Solo se actualiza la cantidad
+                    item.product._id === product._id
+                        ? { ...item, quantity: item.quantity + quantity }
                         : item
                 );
             } else {
-                // Si no existe, agregar el producto al carrito
+                // Si no existe, agregarlo como un nuevo producto
                 updatedItems = [...state.items, { product, quantity, price: product.price }];
             }
 
@@ -48,15 +48,15 @@ const cartReducer = (state, action) => {
         }
 
         case "REMOVE_FROM_CART": {
-            const updatedItems = state.items.filter(
-                (item) => item.product.id !== action.payload
-            );
 
-            // Recalcular el precio total
+            const updatedItems = state.items.filter(
+                (item) => item.product._id !== action.payload
+            );
             const totalPrice = updatedItems.reduce(
                 (total, item) => total + item.price * item.quantity,
                 0
             );
+
 
             return { ...state, items: updatedItems, totalPrice };
         }
@@ -65,10 +65,11 @@ const cartReducer = (state, action) => {
             const { id, quantity } = action.payload;
 
             const updatedItems = state.items.map((item) =>
-                item.product.id === id ? { ...item, quantity } : item
+                item.product._id === id
+                    ? { ...item, quantity: item.quantity + quantity }
+                    : item
             );
 
-            // Recalcular el precio total
             const totalPrice = updatedItems.reduce(
                 (total, item) => total + item.price * item.quantity,
                 0
@@ -76,6 +77,7 @@ const cartReducer = (state, action) => {
 
             return { ...state, items: updatedItems, totalPrice };
         }
+
 
         case "SET_ADRESS":
             return { ...state, adress: action.payload };
@@ -87,24 +89,21 @@ const cartReducer = (state, action) => {
             return { ...state, comment: action.payload };
 
         case "CLEAR_CART":
-            return { ...initialState, user: state.user }; // Mantener el usuario al limpiar el carrito
+            return { ...initialState, user: state.user };
 
         default:
+            console.error(`Unknown action type: ${action.type}`); // Log de error para acciones desconocidas
             throw new Error(`Acción desconocida: ${action.type}`);
     }
 };
 
-
 // Proveedor del contexto del carrito
 export const CartProvider = ({ children }) => {
-    const { user } = useAuth(); // Obtener el usuario logueado del contexto de autenticación
-
-    // Configurar el estado inicial del carrito con el ID del usuario logueado
+    const { user } = useAuth();
     const initialStateWithUser = { ...initialState, user: user?.id || null };
 
     const [state, dispatch] = useReducer(cartReducer, initialStateWithUser);
 
-    // Sincronizar el usuario logueado en caso de cambios
     React.useEffect(() => {
         dispatch({ type: "SET_USER", payload: user?.id || null });
     }, [user]);

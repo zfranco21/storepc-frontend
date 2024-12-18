@@ -86,57 +86,58 @@ function OrderList() {
     }
 
     return (
-        <>
+        <div className="order-list__container">
+            <button
+                className="order-list__back-button"
+                onClick={() => navigate("/AdminDashboard")}
+            >
+                Volver al Dashboard
+            </button>
 
-            <div className="order-list__container">
-                <button
-                    className="order-list__back-button"
-                    onClick={() => navigate("/AdminDashboard")}
-                >
-                    Volver al Dashboard
-                </button>
+            <h1 className="order-list__title">Gestión de Órdenes</h1>
 
-                <h1 className="order-list__title">Gestión de Órdenes</h1>
+            <Select
+                className="order-list__select"
+                options={orderOptions}
+                onChange={handleSelectOrder}
+                placeholder="Selecciona una orden"
+                isSearchable
+            />
 
-                <Select
-                    className="order-list__select"
-                    options={orderOptions}
-                    onChange={handleSelectOrder}
-                    placeholder="Selecciona una orden"
-                    isSearchable
-                />
+            {selectedOrder && (
+                <div className="order-list__details">
+                    <h2>Detalles de la Orden</h2>
+                    <p><strong>ID:</strong> {selectedOrder._id}</p>
+                    <p><strong>Usuario:</strong> {selectedOrder.user?.name}</p>
+                    <p><strong>Dirección:</strong> {selectedOrder.adress}</p>
+                    <p><strong>Teléfono:</strong> {selectedOrder.telephone}</p>
+                    <p><strong>Comentario:</strong> {selectedOrder.comment || "N/A"}</p>
 
-                {selectedOrder && (
-                    <div className="order-list__details">
-                        <h2>Detalles de la Orden</h2>
-                        <p><strong>ID:</strong> {selectedOrder._id}</p>
-                        <p><strong>Usuario:</strong> {selectedOrder.user}</p>
-                        <p><strong>Dirección:</strong> {selectedOrder.adress}</p>
-                        <p><strong>Teléfono:</strong> {selectedOrder.telephone}</p>
-                        <p><strong>Comentario:</strong> {selectedOrder.comment || "N/A"}</p>
-                        <p><strong>Productos:</strong></p>
+                    <p><strong>Productos:</strong></p>
+                    {selectedOrder.products && selectedOrder.products.length > 0 ? (
                         <ul>
                             {selectedOrder.products.map((item) => (
                                 <li key={item.product._id}>
-                                    {item.product.name} - Cantidad: {item.quantity} - Precio: ${
-                                        item.price
-                                    }
+                                    {item.product.name} - Cantidad: {item.quantity} - Precio: ${item.price}
                                 </li>
                             ))}
                         </ul>
-                        <p><strong>Precio Total:</strong> ${selectedOrder.totalPrice}</p>
+                    ) : (
+                        <p>No hay productos en esta orden.</p>
+                    )}
 
-                        <Select
-                            className="order-list__select-status"
-                            options={statuses}
-                            onChange={handleStatusChange}
-                            placeholder="Actualizar estado"
-                            value={statuses.find((status) => status.value === selectedOrder.status)}
-                        />
-                    </div>
-                )}
-            </div>
-        </>
+                    <p><strong>Precio Total:</strong> ${selectedOrder.totalPrice}</p>
+
+                    <Select
+                        className="order-list__select-status"
+                        options={statuses}
+                        onChange={handleStatusChange}
+                        placeholder="Actualizar estado"
+                        value={statuses.find((status) => status.value === selectedOrder.status)}
+                    />
+                </div>
+            )}
+        </div>
     );
 }
 
