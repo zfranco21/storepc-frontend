@@ -66,7 +66,8 @@ const Checkout = () => {
                 if (response.ok) {
                     setIsOrderSubmitted(true);
                     dispatch({ type: "CLEAR_CART" });
-                    navigate("/");
+                    alert("Compra enviada al administrador. MUCHAS GRACIAS POR ELEGIRNOS");
+                    navigate("/PayDetail");
                 } else {
                     response.json().then((data) => {
                         setError(data.error || "Error al procesar la orden.");
@@ -77,6 +78,7 @@ const Checkout = () => {
                 setIsSubmitting(false);
                 setError("Hubo un problema al enviar la orden. Intenta nuevamente.");
             });
+
 
     };
     if (isOrderSubmitted) {

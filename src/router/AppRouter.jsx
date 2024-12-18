@@ -14,6 +14,7 @@ import OrderList from "../pages/AdminPages/orders/OrderList";
 import Checkout from "../pages/UserPages/Checkout";
 import CartDetail from "../pages/UserPages/CartDetail";
 import ProductDetail from "../pages/UserPages/ProductDetail";
+import PayDetail from "../pages/UserPages/PayDetail";
 
 export default function AppRouter() {
   return (
@@ -25,13 +26,15 @@ export default function AppRouter() {
       <Route path="/productos" element={<Productos />} />
       <Route path="/arma-tu-pc" element={<ArmadoPC />} />
       <Route path="/ProductDetail" element={<ProductDetail />} />
-      <Route path="/CartDetail" element={<CartDetail />} />
+
 
       {/* RUTAS PROTEGIDAS */}
       <Route element={<ProtectedRoutes />}>
         <Route path="/soporte" element={<Soporte />} />
         <Route path="/productos" element={<Productos />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/CartDetail" element={<CartDetail />} />
+        <Route path="/PayDetail" element={<PayDetail />} />
       </Route>
 
       {/* RUTAS ADMINISTRADOR */}

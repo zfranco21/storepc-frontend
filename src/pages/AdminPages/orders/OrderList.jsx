@@ -37,9 +37,10 @@ function OrderList() {
 
     const orderOptions = orders.map((order) => ({
         value: order._id,
-        label: `Orden #${order._id} - ${order.status}`,
+        label: `Orden #${order._id} -- Usuario: ${order.user?.name} -- Estado: ${order.status}`,
         order,
     }));
+
 
     const handleSelectOrder = (selectedOption) => {
         setSelectedOrder(selectedOption.order);
@@ -66,16 +67,23 @@ function OrderList() {
 
             const updatedOrder = await response.json();
 
-            setOrders((prev) =>
-                prev.map((order) =>
+            // Actualizar el estado global y local
+            setOrders((prevOrders) =>
+                prevOrders.map((order) =>
                     order._id === updatedOrder._id ? updatedOrder : order
                 )
             );
-            setSelectedOrder(updatedOrder);
+
+            // Forzar actualización del orden seleccionado
+            setSelectedOrder((prev) => ({
+                ...prev,
+                status: updatedOrder.status,
+            }));
         } catch (error) {
             console.error(error.message);
         }
     };
+
 
     if (loading) {
         return <div>Cargando órdenes...</div>;
@@ -102,7 +110,17 @@ function OrderList() {
                 onChange={handleSelectOrder}
                 placeholder="Selecciona una orden"
                 isSearchable
+                value={
+                    selectedOrder &&
+                    {
+                        value: selectedOrder._id,
+                        label: `Orden #${selectedOrder._id} -- Usuario: ${selectedOrder.user?.name} -- Estado: ${selectedOrder.status}`,
+                        order: selectedOrder,
+                    }
+
+                }
             />
+
 
             {selectedOrder && (
                 <div className="order-list__details">
