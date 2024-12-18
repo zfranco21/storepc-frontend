@@ -67,9 +67,9 @@ function Header() {
           {!user.isAdmin ? (
             <div className="header-button">
               <button
-                onClick={() => alert("Accediendo a perfil usuario normal")}
+                onClick={() => { navigate("/UserDashboard") }}
               >
-                Perfil
+                Mi Perfil
               </button>
             </div>
           ) : (

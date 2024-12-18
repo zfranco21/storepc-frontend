@@ -26,10 +26,7 @@ export default function ProductDetail() {
 
     // Función para manejar el agregado al carrito
     const handleAddToCart = () => {
-        // Convertir quantity a número (por si se cambió a string)
         const quantityNumber = Number(quantity);
-
-        // Asegurarse de que la cantidad sea válida y en stock
         if (product.stock > 0 && quantityNumber > 0 && quantityNumber <= product.stock) {
             dispatch({
                 type: "ADD_TO_CART",
@@ -38,6 +35,7 @@ export default function ProductDetail() {
                     quantity: quantityNumber,
                 },
             });
+            alert("Articulo agregado al carrito");
         } else {
             alert("La cantidad seleccionada no es válida.");
         }

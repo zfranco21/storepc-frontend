@@ -15,6 +15,9 @@ import Checkout from "../pages/UserPages/Checkout";
 import CartDetail from "../pages/UserPages/CartDetail";
 import ProductDetail from "../pages/UserPages/ProductDetail";
 import PayDetail from "../pages/UserPages/PayDetail";
+import UserDashboard from "../pages/UserPages/UserDashboard";
+import UserDetails from "../pages/UserPages/UserDetails";
+import UserOrders from "../pages/UserPages/UserOrders";
 
 export default function AppRouter() {
   return (
@@ -35,6 +38,9 @@ export default function AppRouter() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/CartDetail" element={<CartDetail />} />
         <Route path="/PayDetail" element={<PayDetail />} />
+        <Route path="/UserDashboard" element={<UserDashboard />} />
+        <Route path="/UserDetails" element={<UserDetails />} />
+        <Route path="/UserOrders" element={<UserOrders />} />
       </Route>
 
       {/* RUTAS ADMINISTRADOR */}
