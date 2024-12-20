@@ -1,27 +1,31 @@
 import React from 'react';
+import './Categorias.css';
 
-function Categorias() {
-  const categories = [
-    'Equipos y Notebooks',
-    'Monitores',
-    'Procesadores',
-    'Placas de Video',
-    'Memorias RAM',
-    'Discos Duros',
-    'Auriculares',
-    'Fuentes',
-    'Mouses',
-    'Teclados',
-    'Gabinetes',
-    'Fuentes',
-  ];
-
+function Categorias({ categories, onCategorySelect, selectedCategory }) {
   return (
     <div className="categorias">
       <ul>
-        {categories.map((category, index) => (
-          <li key={index}>{category}</li>
-        ))}
+        {/* Opción para mostrar todos los productos */}
+        <li
+          onClick={() => onCategorySelect(null)}
+          className={`categoria-item ${selectedCategory === null ? 'selected' : ''}`}
+        >
+          Todas
+        </li>
+        {/* Mapeo de categorías */}
+        {categories.length > 0 ? (
+          categories.map((category) => (
+            <li
+              key={category._id}
+              onClick={() => onCategorySelect(category._id)}  // Pasamos el _id de la categoría
+              className={`categoria-item ${selectedCategory === category._id ? 'selected' : ''}`}
+            >
+              {category.name}
+            </li>
+          ))
+        ) : (
+          <li className="categoria-item">No hay categorías disponibles</li>
+        )}
       </ul>
     </div>
   );
