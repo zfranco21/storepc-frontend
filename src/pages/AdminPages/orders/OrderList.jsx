@@ -20,7 +20,7 @@ function OrderList() {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const response = await fetch("http://localhost:3000/orders");
+                const response = await fetch("https://store-pc-backend.vercel.app/orders");
                 if (!response.ok) {
                     throw new Error("Error al obtener las órdenes");
                 }
@@ -51,7 +51,7 @@ function OrderList() {
 
         try {
             const response = await fetch(
-                `http://localhost:3000/orders/${selectedOrder._id}/status`,
+                `https://store-pc-backend.vercel.app/orders/${selectedOrder._id}/status`,
                 {
                     method: "PUT",
                     headers: {

@@ -45,7 +45,7 @@ export default function AppRouter() {
 
       {/* RUTAS ADMINISTRADOR */}
       <Route element={<ProtectedRoutes adminOnly />}>
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="/AdminDashboard" element={<AdminDashboard />} />
         <Route path="/admin/users" element={<UsersList />} />
         <Route path="/admin/products" element={<ProductList />} />
         <Route path="/admin/orders" element={<OrderList />} />

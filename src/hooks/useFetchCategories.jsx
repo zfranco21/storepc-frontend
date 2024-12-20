@@ -8,14 +8,14 @@ export function useFetchCategories() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch("http://localhost:3000/categories");
+        const response = await fetch("https://store-pc-backend.vercel.app/categories");
         if (!response.ok) {
           throw new Error("Error al obtener las categorías");
         }
         const data = await response.json();
-        setCategories(data); 
+        setCategories(data);
       } catch (err) {
-        setError(err.message); 
+        setError(err.message);
       } finally {
         setLoading(false);
       }

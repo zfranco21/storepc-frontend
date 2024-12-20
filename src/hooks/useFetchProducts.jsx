@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 
 export function useFetchProducts(categoryId = null) {
-  const [products, setProducts] = useState([]); 
-  const [loading, setLoading] = useState(true);  
-  const [error, setError] = useState(null); 
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -11,9 +11,9 @@ export function useFetchProducts(categoryId = null) {
 
       try {
         const url = categoryId
-          ? `http://localhost:3000/products/${categoryId}/products` // URL con filtro de categoría
-          : "http://localhost:3000/products";  // URL para obtener todos los productos
-        
+          ? `https://store-pc-backend.vercel.app/products/${categoryId}/products` // URL con filtro de categoría
+          : "https://store-pc-backend.vercel.app/products";  // URL para obtener todos los productos
+
         const response = await fetch(url);
         if (!response.ok) {
           throw new Error("Error al obtener los productos");

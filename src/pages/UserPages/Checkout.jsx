@@ -54,9 +54,8 @@ const Checkout = () => {
             telephone: cart.telephone,
             comment: cart.comment,
         };
-        console.log("Orden a enviar:", JSON.stringify(order, null, 2));
 
-        fetch("http://localhost:3000/orders/", {
+        fetch("https://store-pc-backend.vercel.app/orders/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(order),

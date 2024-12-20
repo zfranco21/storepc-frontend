@@ -14,13 +14,12 @@ export default function UserOrders() {
         if (user) {
             const fetchOrders = async () => {
                 try {
-                    const response = await fetch(`http://localhost:3000/orders/user/${user.id}`);
+                    const response = await fetch(`https://store-pc-backend.vercel.app/orders/user/${user.id}`);
                     if (!response.ok) {
                         throw new Error("Hubo un error al obtener las órdenes.");
                     }
                     const ordersData = await response.json();
                     setOrders(ordersData);
-                    console.log(ordersData);  // Para depuración
                 } catch (err) {
                     setError("Hubo un problema al cargar tus órdenes.");
                 } finally {

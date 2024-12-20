@@ -26,7 +26,7 @@ function ProductList() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://localhost:3000/products");
+        const response = await fetch("https://store-pc-backend.vercel.app/products");
         if (!response.ok) {
           throw new Error("Error al obtener los productos");
         }
@@ -50,7 +50,7 @@ function ProductList() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch("http://localhost:3000/categories");
+        const response = await fetch("https://store-pc-backend.vercel.app/categories");
         if (!response.ok) {
           throw new Error("Error al obtener las categorías");
         }
@@ -96,7 +96,7 @@ function ProductList() {
 
   const handleAddProduct = async () => {
     try {
-      const response = await fetch("http://localhost:3000/products", {
+      const response = await fetch("https://store-pc-backend.vercel.app/products", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -126,7 +126,7 @@ function ProductList() {
     try {
       const newState = !selectedProduct.isEnabled; // Cambio de estado
       const response = await fetch(
-        `http://localhost:3000/products/${selectedProduct._id}/state`,
+        `https://store-pc-backend.vercel.app/products/${selectedProduct._id}/state`,
         {
           method: "PUT",
           headers: {
@@ -153,7 +153,7 @@ function ProductList() {
   const handleUpdateProduct = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/products/${selectedProduct._id}`,
+        `https://store-pc-backend.vercel.app/products/${selectedProduct._id}`,
         {
           method: "PUT",
           headers: {

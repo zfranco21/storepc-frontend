@@ -9,7 +9,7 @@ export const useLogin = (closeLoginModal) => {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch("http://localhost:3000/auth/login", {
+      const response = await fetch("https://store-pc-backend.vercel.app/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -23,7 +23,6 @@ export const useLogin = (closeLoginModal) => {
         throw new Error(data.error || "Credenciales incorrectas");
       }
 
-      console.log(data); // Revisa la respuesta que llega del backend
 
       if (data.user) {
         setUser(data.user);

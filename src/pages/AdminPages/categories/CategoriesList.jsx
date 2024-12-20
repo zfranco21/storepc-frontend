@@ -20,7 +20,7 @@ function CategoryList() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch("http://localhost:3000/categories");
+        const response = await fetch("https://store-pc-backend.vercel.app/categories");
         if (!response.ok) {
           throw new Error("Error al obtener las categorías");
         }
@@ -51,7 +51,7 @@ function CategoryList() {
 
   const handleAddCategory = async () => {
     try {
-      const response = await fetch("http://localhost:3000/categories", {
+      const response = await fetch("https://store-pc-backend.vercel.app/categories", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -76,7 +76,7 @@ function CategoryList() {
   const handleUpdateCategory = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/categories/${selectedCategory._id}`,
+        `https://store-pc-backend.vercel.app/categories/${selectedCategory._id}`,
         {
           method: "PUT",
           headers: {

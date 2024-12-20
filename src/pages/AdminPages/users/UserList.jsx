@@ -26,7 +26,7 @@ function UserList() {
   const handleToggleState = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/users/${selectedUser._id}/enable`,
+        `https://store-pc-backend.vercel.app/users/${selectedUser._id}/enable`,
         {
           method: "PUT",
           headers: {
@@ -48,7 +48,7 @@ function UserList() {
   const handleUpdateUser = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/users/${selectedUser._id}`,
+        `https://store-pc-backend.vercel.app/users/${selectedUser._id}`,
         {
           method: "PUT",
           headers: {

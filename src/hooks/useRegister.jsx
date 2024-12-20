@@ -8,7 +8,7 @@ export const useRegister = ({ closeRegisterModal }) => {
 
   const handleRegister = async () => {
     try {
-      const response = await fetch("http://localhost:3000/users/", {
+      const response = await fetch("https://store-pc-backend.vercel.app/users/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -22,7 +22,6 @@ export const useRegister = ({ closeRegisterModal }) => {
         throw new Error(data.error || "Error en registro de usuario");
       }
 
-      console.log(data); // Revisa la respuesta que llega del backend
 
       if (data.user) {
         setUser(data.user);
