@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import { useNavigate } from "react-router-dom";
 import "./CategoriesList.css";
+<<<<<<< HEAD
 import Header from "../../../components/Header";
+=======
+>>>>>>> 433f66746e9c6d8f9cc048ecd830bd947de99c82
 
 function CategoryList() {
   const navigate = useNavigate();
@@ -21,7 +24,11 @@ function CategoryList() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
+<<<<<<< HEAD
         const response = await fetch("http://localhost:3000/categories");
+=======
+        const response = await fetch("https://store-pc-backend.vercel.app/categories");
+>>>>>>> 433f66746e9c6d8f9cc048ecd830bd947de99c82
         if (!response.ok) {
           throw new Error("Error al obtener las categorías");
         }
@@ -52,7 +59,11 @@ function CategoryList() {
 
   const handleAddCategory = async () => {
     try {
+<<<<<<< HEAD
       const response = await fetch("http://localhost:3000/categories", {
+=======
+      const response = await fetch("https://store-pc-backend.vercel.app/categories", {
+>>>>>>> 433f66746e9c6d8f9cc048ecd830bd947de99c82
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -77,7 +88,11 @@ function CategoryList() {
   const handleUpdateCategory = async () => {
     try {
       const response = await fetch(
+<<<<<<< HEAD
         `http://localhost:3000/categories/${selectedCategory._id}`,
+=======
+        `https://store-pc-backend.vercel.app/categories/${selectedCategory._id}`,
+>>>>>>> 433f66746e9c6d8f9cc048ecd830bd947de99c82
         {
           method: "PUT",
           headers: {
@@ -115,7 +130,11 @@ function CategoryList() {
 
   return (
     <>
+<<<<<<< HEAD
       <Header />
+=======
+
+>>>>>>> 433f66746e9c6d8f9cc048ecd830bd947de99c82
       <div className="category-list__container">
         <button
           className="category-list__back-button"

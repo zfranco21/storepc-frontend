@@ -13,7 +13,11 @@ function ProductList() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
+<<<<<<< HEAD
         const response = await fetch("http://localhost:3000/categories");
+=======
+        const response = await fetch("https://store-pc-backend.vercel.app/categories");
+>>>>>>> 433f66746e9c6d8f9cc048ecd830bd947de99c82
         if (!response.ok) throw new Error("Error al obtener las categorías");
         const data = await response.json();
         setCategories(data);
@@ -26,10 +30,16 @@ function ProductList() {
 
   // Manejador para la selección de categorías
   const handleCategorySelect = (categoryId) => {
+<<<<<<< HEAD
     console.log('Categoría seleccionada:', categoryId);  // Verifica el ID de la categoría
     setSelectedCategory(categoryId); // Actualiza la categoría seleccionada
   };
   
+=======
+    setSelectedCategory(categoryId); // Actualiza la categoría seleccionada
+  };
+
+>>>>>>> 433f66746e9c6d8f9cc048ecd830bd947de99c82
   if (loading) {
     return <div className="product-list__loading">Cargando productos...</div>;
   }
@@ -50,8 +60,13 @@ function ProductList() {
         <h1 className="product-list__title">
           {selectedCategory
             ? `Productos de la categoría: ${categories.find(
+<<<<<<< HEAD
                 (cat) => cat._id === selectedCategory
               )?.name}`
+=======
+              (cat) => cat._id === selectedCategory
+            )?.name}`
+>>>>>>> 433f66746e9c6d8f9cc048ecd830bd947de99c82
             : "Todos los productos"}
         </h1>
 

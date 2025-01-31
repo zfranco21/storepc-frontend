@@ -18,6 +18,7 @@ body {
   
   .blackWeek {
     display: flex;
+    align-items: flex-end;
     margin: 30px 0 30px 30px;
   }
   
@@ -25,6 +26,7 @@ body {
     font-size: 10px;
     color: #0078F8;
     margin: 0 0 0 4px;
+    line-height: 1;
   }
   
   .blackWeek p a {
@@ -40,60 +42,3 @@ body {
     color: #fff;
     cursor: pointer;
   }
-  
-  /* Estilos de las imágenes */
-  .pcPromo {
-    width: 80%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-  }
-  
-  /* Efecto hover */
-  .pcPromo:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Estilo para las cards */
-  .product-card {
-    text-align: center;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    max-width: 260px;
-    background-color: #fff;
-  }
-  
-  .product-card h3 {
-    font-size: 16px;
-    color: #333;
-  }
-
-  .product-card h2 {
-    font-size: 14px;
-    color: #E64A19;
-  }
-  
-  .product-card p {
-    font-size: 14px;
-    color: #666;
-  }
-  
-  .product-card button {
-    background: #E64A19;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
-    border-radius: 5px;
-  }
-  
-  .product-card button:hover {
-    background: #003dbf;
-  }
-  

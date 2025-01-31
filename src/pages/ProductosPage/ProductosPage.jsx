@@ -1,21 +1,42 @@
-import React from "react";
-import Blackweek from "../../components/Blackweek";
-import Carrito from "../../components/carrito";
-import Products from "../../components/products";
+import React, { useState } from 'react';
+import { useFetchProducts } from '../../hooks/useFetchProducts';
+import { useFetchCategories } from '../../hooks/useFetchCategories';
+import Categorias from './components/Categorias';
+import ProductGrid from './components/ProductGrid';
+import './ProductosPage.css';
 
-function Productos() {
+function ProductosPage() {
+  const { products, loading: productsLoading, error: productsError } = useFetchProducts();
+  const { categories, loading: categoriesLoading, error: categoriesError } = useFetchCategories();
+  const [selectedCategory, setSelectedCategory] = useState(null); // Estado para la categoría seleccionada
+
+  if (productsLoading || categoriesLoading) {
+    return <p>Cargando...</p>;
+  }
+
+  if (productsError || categoriesError) {
+    return <p>{productsError || categoriesError}</p>;
+  }
+
   return (
     <div>
-      <main>
-        <Blackweek />
-        <Products   />
-        <Products   />
-      </main>
-      <footer>
-        <Carrito />
-      </footer>
+      <div className="productos-page">
+        <h1>Nuestros Productos</h1>
+
+        {/* Categorías clickeables */}
+        <Categorias
+          categories={categories}
+          onCategorySelect={(category) => setSelectedCategory(category)}
+        />
+        
+        {/* Mostrar productos según la categoría */}
+        <ProductGrid
+          products={products}
+          selectedCategory={selectedCategory}
+        />
+      </div>
     </div>
   );
 }
 
-export default Productos;
+export default ProductosPage;

@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import { useNavigate } from "react-router-dom";
 import "./ProductList.css";
+<<<<<<< HEAD
 import Header from "../../../components/Header";
+=======
+>>>>>>> 433f66746e9c6d8f9cc048ecd830bd947de99c82
 
 function ProductList() {
   const navigate = useNavigate();
@@ -27,7 +30,11 @@ function ProductList() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
+<<<<<<< HEAD
         const response = await fetch("http://localhost:3000/products");
+=======
+        const response = await fetch("https://store-pc-backend.vercel.app/products");
+>>>>>>> 433f66746e9c6d8f9cc048ecd830bd947de99c82
         if (!response.ok) {
           throw new Error("Error al obtener los productos");
         }
@@ -51,7 +58,11 @@ function ProductList() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
+<<<<<<< HEAD
         const response = await fetch("http://localhost:3000/categories");
+=======
+        const response = await fetch("https://store-pc-backend.vercel.app/categories");
+>>>>>>> 433f66746e9c6d8f9cc048ecd830bd947de99c82
         if (!response.ok) {
           throw new Error("Error al obtener las categorías");
         }
@@ -97,7 +108,11 @@ function ProductList() {
 
   const handleAddProduct = async () => {
     try {
+<<<<<<< HEAD
       const response = await fetch("http://localhost:3000/products", {
+=======
+      const response = await fetch("https://store-pc-backend.vercel.app/products", {
+>>>>>>> 433f66746e9c6d8f9cc048ecd830bd947de99c82
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -127,7 +142,11 @@ function ProductList() {
     try {
       const newState = !selectedProduct.isEnabled; // Cambio de estado
       const response = await fetch(
+<<<<<<< HEAD
         `http://localhost:3000/products/${selectedProduct._id}/state`,
+=======
+        `https://store-pc-backend.vercel.app/products/${selectedProduct._id}/state`,
+>>>>>>> 433f66746e9c6d8f9cc048ecd830bd947de99c82
         {
           method: "PUT",
           headers: {
@@ -154,7 +173,11 @@ function ProductList() {
   const handleUpdateProduct = async () => {
     try {
       const response = await fetch(
+<<<<<<< HEAD
         `http://localhost:3000/products/${selectedProduct._id}`,
+=======
+        `https://store-pc-backend.vercel.app/products/${selectedProduct._id}`,
+>>>>>>> 433f66746e9c6d8f9cc048ecd830bd947de99c82
         {
           method: "PUT",
           headers: {
@@ -192,7 +215,10 @@ function ProductList() {
 
   return (
     <>
+<<<<<<< HEAD
       <Header />
+=======
+>>>>>>> 433f66746e9c6d8f9cc048ecd830bd947de99c82
       <div className="product-list__container">
         <button
           className="product-list__back-button"

@@ -8,7 +8,11 @@ export function useFetchUsers() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
+<<<<<<< HEAD
         const response = await fetch("http://localhost:3000/users"); // Endpoint para obtener usuarios
+=======
+        const response = await fetch("https://store-pc-backend.vercel.app/users"); // Endpoint para obtener usuarios
+>>>>>>> 433f66746e9c6d8f9cc048ecd830bd947de99c82
         if (!response.ok) {
           throw new Error("Error al obtener los usuarios");
         }

@@ -3,7 +3,10 @@ import Select from "react-select";
 import { useFetchUsers } from "../../../hooks/useFetchUsers";
 import { useNavigate } from "react-router-dom"; // Importa useNavigate
 import "./UserList.css";
+<<<<<<< HEAD
 import Header from "../../../components/Header";
+=======
+>>>>>>> 433f66746e9c6d8f9cc048ecd830bd947de99c82
 
 function UserList() {
   const navigate = useNavigate(); // Inicializa el hook useNavigate
@@ -27,7 +30,11 @@ function UserList() {
   const handleToggleState = async () => {
     try {
       const response = await fetch(
+<<<<<<< HEAD
         `http://localhost:3000/users/${selectedUser._id}/enable`,
+=======
+        `https://store-pc-backend.vercel.app/users/${selectedUser._id}/enable`,
+>>>>>>> 433f66746e9c6d8f9cc048ecd830bd947de99c82
         {
           method: "PUT",
           headers: {
@@ -49,7 +56,11 @@ function UserList() {
   const handleUpdateUser = async () => {
     try {
       const response = await fetch(
+<<<<<<< HEAD
         `http://localhost:3000/users/${selectedUser._id}`,
+=======
+        `https://store-pc-backend.vercel.app/users/${selectedUser._id}`,
+>>>>>>> 433f66746e9c6d8f9cc048ecd830bd947de99c82
         {
           method: "PUT",
           headers: {
@@ -84,7 +95,10 @@ function UserList() {
 
   return (
     <>
+<<<<<<< HEAD
       <Header /> {/* import provisorio */}
+=======
+>>>>>>> 433f66746e9c6d8f9cc048ecd830bd947de99c82
       <div className="user-list__container">
         {/* Botón para volver al AdminDashboard */}
         <button
