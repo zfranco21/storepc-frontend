@@ -1,0 +1,61 @@
+.pay-detail-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #1e1e1e;
+  text-align: center;
+}
+
+.pay-detail-title {
+  color: grey;
+  text-align: center;
+}
+
+.pay-detail-list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.pay-detail-list li {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.highlight {
+  color: #007bff;
+}
+
+.pay-detail-thanks {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Estilo del botón */
+.pay-detail-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.pay-detail-button:hover {
+  background-color: #0056b3;
+}
+
+.pay-detail-button:active {
+  background-color: #003f7f;
+}
+
+.pay-detail-button span {
+  font-weight: bold;
+}
