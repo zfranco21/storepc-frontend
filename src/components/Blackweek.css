@@ -1,0 +1,44 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    gap: 10rem;
+    align-items: center;
+  }
+  
+  .blackWeek {
+    display: flex;
+    align-items: flex-end;
+    margin: 30px 0 30px 30px;
+  }
+  
+  .blackWeek p {
+    font-size: 10px;
+    color: #0078F8;
+    margin: 0 0 0 4px;
+    line-height: 1;
+  }
+  
+  .blackWeek p a {
+    text-decoration: none;
+    color: #E64A19;
+  }
+  
+  .blackWeek button {
+    font-size: 16px;
+    padding: 6px 10px;
+    border: 2px solid #E64A19;
+    background-color: #E64A19;
+    color: #fff;
+    cursor: pointer;
+  }

@@ -1,0 +1,15 @@
+.carrito {
+    height: 4rem;
+    width: 4rem;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 50%;
+    background-color: #ff5722;
+    border: 1px solid #ff5722;
+}
+
+.imgCarrito {
+    height: 2rem;
+    width: 2rem;
+}

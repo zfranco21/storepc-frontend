@@ -1,0 +1,105 @@
+/* AdminDashboard.css */
+
+/* Contenedor principal */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  font-family: "Arial", sans-serif;
+  background-color: #1e1e1e;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  text-align: center;
+}
+
+/* Título principal */
+.dashboard-title {
+  font-size: 2.5rem;
+  color: #4fc3f7;
+  margin-bottom: 30px;
+}
+
+/* Contenedor de botones */
+.dashboard-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Estilo para los botones */
+.dashboard-button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 250px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dashboard-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Botón con color personalizado para cada sección */
+.dashboard-button:nth-child(1) {
+  background-color: #ff9800;
+}
+
+.dashboard-button:nth-child(1):hover {
+  background-color: #f57c00;
+}
+
+.dashboard-button:nth-child(2) {
+  background-color: #4caf50;
+}
+
+.dashboard-button:nth-child(2):hover {
+  background-color: #388e3c;
+}
+
+.dashboard-button:nth-child(3) {
+  background-color: #f44336;
+}
+
+.dashboard-button:nth-child(3):hover {
+  background-color: #c62828;
+}
+
+.dashboard-button:nth-child(4) {
+  background-color: #9c27b0;
+}
+
+.dashboard-button:nth-child(4):hover {
+  background-color: #7b1fa2;
+}
+
+/* Estilos de carga o error (en caso de ser necesarios) */
+.dashboard-loading,
+.dashboard-error {
+  font-size: 1.2rem;
+  color: #ff5252;
+  text-align: center;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 20px;
+  }
+
+  .dashboard-title {
+    font-size: 2rem;
+  }
+
+  .dashboard-button {
+    font-size: 1rem;
+    width: 200px;
+  }
+}
